@@ -1,23 +1,280 @@
-Perfect. If you want SUNO to really understand the direction, the trick is:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set The Sky On Fire</title>
 
-Describe the mood + texture
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
 
-Describe the vocal tone clearly
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
 
-Describe the production dynamics
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #0b0b0b;
+    color: white;
+    overflow-x: hidden;
+}
 
-Avoid saying “make it like Allan Rayman – Word of Mouth” directly (AI tools respond better to stylistic description than direct imitation)
+/* INTRO OVERLAY */
 
-Here’s a strong optimized prompt you can copy into SUNO:
+#intro {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 1.5s ease;
+}
 
-SUNO PROMPT:
+#enterBtn {
+    padding: 18px 50px;
+    background: #ff3c00;
+    border: none;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
 
-Dark, sensual alternative rock song with a moody, hypnotic atmosphere. Minimal but gritty production. Deep, intimate male vocal with a low-register, slightly raspy tone — calm but intense, almost whispered in the verses and more powerful in the chorus.
+#enterBtn:hover {
+    background: #ff5c26;
+    transform: scale(1.08);
+}
 
-The verses should feel stripped and tense with pulsing bass and subtle guitar textures. The chorus should open up with emotional weight but still stay controlled and cool — not overly pop, not overly polished.
+/* HERO */
 
-Groovy, steady drum beat with a slow-burning build. Reverb-heavy guitars, atmospheric background textures, slightly cinematic feel. The vocal delivery should feel confident, mysterious, magnetic, and emotionally restrained — similar to dark indie/alternative rock with sensual undertones.
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+                url('cover.jpg') center/cover fixed no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
 
-Tempo around 95–105 BPM. Minor key. Brooding, intimate, and dramatic.
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
 
-Make it feel nocturnal, urban, and emotionally charged.
+.subtitle {
+    font-weight: 300;
+    max-width: 600px;
+    opacity: 0.85;
+}
+
+/* Floating Embers */
+
+.ember {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: orange;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: rise linear infinite;
+}
+
+@keyframes rise {
+    from { transform: translateY(100vh) scale(1); opacity:0.7; }
+    to { transform: translateY(-10vh) scale(0.5); opacity:0; }
+}
+
+/* Lyrics Section */
+
+.lyrics {
+    padding: 120px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 2;
+    font-weight: 300;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: #0a0a0a;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<div id="intro">
+    <button id="enterBtn">ENTER THE FIRE</button>
+</div>
+
+<section class="hero">
+    <h1>SET THE SKY ON FIRE</h1>
+    <p class="subtitle">
+        She carried the storm alone.<br>
+        I chose to stand in it with her.
+    </p>
+</section>
+
+<section class="lyrics" id="lyricsSection">
+
+<!-- 🔥 PASTE FULL LYRICS BELOW -->
+
+You hide the storm behind your smile,
+Like thunder doesn’t shake your bones.
+You walk through hell in quiet style,
+Like breaking never shows.
+
+
+But I see the cracks in the armor,
+Hear the tremble in your breath.
+You don’t have to be a soldier,
+You don’t have to fight to death.
+
+
+Drop the weight, let it shatter,
+Let the whole world fall apart 
+I’ll be the ground that doesn’t scatter,
+I’ll be the beat inside your heart.
+
+
+Ana, when the night comes crawling,
+When the shadows start to whisper wrong,
+I’ll be the fire they can’t outrun,
+I’ll be your battle song.
+No dark streets, no cold silence,
+No ghost of fear we can’t outgrow 
+Ana, we’ll set the sky on fire,
+Let the whole damn world just know.
+
+(Set the sky on fire…)
+(Set the sky on fire…)
+
+They tried to teach you how to carry
+Every burden on your own.
+But love was never meant to bury
+Every fracture made of stone.
+So let your guard crash to the floor,
+Let your tears fall without shame.
+I don’t want your perfect war 
+I want your truth, your flame.
+
+
+When your pulse runs wild with doubt,
+And the silence gets too loud,
+Scream my name — I’ll drown it out,
+I’ll stand fierce and proud.
+
+
+Ana, when the night comes crawling,
+When the shadows start to whisper wrong,
+I’ll be the fire they can’t outrun,
+I’ll be your battle song.
+No dark streets, no cold silence,
+No ghost of fear we can’t outgrow 
+Ana, we’ll set the sky on fire,
+Let the whole damn world just know.
+
+
+If the wind turns cold and vicious,
+If the world forgets your light,
+I’ll carve our names in constellations,
+I’ll hold the line, I’ll hold you tight.
+No more running from the darkness,
+No more bending just to survive 
+With you, Ana, I’m fearless,
+With you, I’m alive.
+
+
+Ana, no dark streets behind us,
+No dark thoughts left to bleed.
+In my arms the world goes silent,
+You are everything I need.
+Let the past burn down to embers,
+Let tomorrow start tonight 
+Ana, we don’t hide from thunder,
+We are lightning in the night.
+
+
+We are lightning in the night…
+(Set the sky on fire…)
+We are lightning in the night…
+<!-- 🔥 PASTE FULL LYRICS ABOVE -->
+
+</section>
+
+<footer>
+© 2026 Your Band Name • All Rights Reserved
+</footer>
+
+<audio id="player">
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* 🔥 FLOATING EMBERS */
+
+function createEmber() {
+    const ember = document.createElement("div");
+    ember.classList.add("ember");
+    ember.style.left = Math.random() * 100 + "vw";
+    ember.style.animationDuration = (5 + Math.random() * 5) + "s";
+    document.body.appendChild(ember);
+    setTimeout(() => ember.remove(), 10000);
+}
+setInterval(createEmber, 300);
+
+/* 🎧 AUDIO + AUTO SCROLL */
+
+const audio = document.getElementById("player");
+const intro = document.getElementById("intro");
+const button = document.getElementById("enterBtn");
+
+button.addEventListener("click", () => {
+
+    audio.volume = 0;
+    audio.play();
+
+    // Fade in
+    let vol = 0;
+    const fade = setInterval(() => {
+        if (vol < 1) {
+            vol += 0.05;
+            audio.volume = vol;
+        } else {
+            clearInterval(fade);
+        }
+    }, 200);
+
+    intro.style.opacity = "0";
+    setTimeout(() => intro.style.display = "none", 1500);
+
+    // 🔥 AUTO SCROLL BASED ON SONG LENGTH
+    audio.onloadedmetadata = function() {
+        const duration = audio.duration;
+        const pageHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollSpeed = pageHeight / duration;
+
+        setInterval(() => {
+            window.scrollBy(0, scrollSpeed);
+        }, 1000);
+    };
+
+});
+
+</script>
+
+</body>
+</html>
