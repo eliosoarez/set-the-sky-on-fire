@@ -16,14 +16,16 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #0d0d0d;
+    background: #0b0b0b;
     color: white;
     overflow-x: hidden;
 }
 
+/* 🔥 Animated Fire Glow Background */
 .hero {
+    position: relative;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
                 url('cover.jpg') center/cover no-repeat;
     display: flex;
     flex-direction: column;
@@ -33,11 +35,47 @@ body {
     padding: 20px;
 }
 
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,80,0,0.2), transparent 60%);
+    animation: firePulse 6s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes firePulse {
+    0% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.1); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 0.3; }
+}
+
+/* ⚡ Lightning Flash */
+@keyframes lightning {
+    0% { opacity: 0; }
+    2% { opacity: 0.8; }
+    4% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.lightning {
+    position: fixed;
+    inset: 0;
+    background: white;
+    opacity: 0;
+    animation: lightning 8s infinite;
+    pointer-events: none;
+}
+
+/* Text Styling */
+
 h1 {
     font-size: 3rem;
     font-weight: 800;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     margin-bottom: 20px;
+    z-index: 2;
 }
 
 .subtitle {
@@ -45,20 +83,30 @@ h1 {
     max-width: 600px;
     margin-bottom: 40px;
     opacity: 0.85;
+    z-index: 2;
 }
 
-.audio-player {
-    margin-top: 20px;
-}
+/* Audio Player */
 
 audio {
     width: 300px;
+    z-index: 2;
 }
 
+/* Sections */
+
 .section {
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
     background: #111;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section h2 {
@@ -85,34 +133,71 @@ footer {
 
 <body>
 
+<div class="lightning"></div>
+
 <section class="hero">
     <h1>SET THE SKY ON FIRE</h1>
     <p class="subtitle">
-        She carried the storm alone.  
-        I chose to stand in it with her.  
-        This is a song about holding the warrior when the world burns.
+        She carried the storm alone.<br>
+        I chose to stand in it with her.<br>
+        A song about holding the warrior when the world burns.
     </p>
 
-    <div class="audio-player">
-        <audio controls>
-            <source src="song.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
+    <audio id="player" autoplay muted>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
 </section>
 
 <section class="section">
     <h2>About The Song</h2>
     <p class="lyrics-preview">
-        A dark alternative rock anthem about strength, vulnerability, and standing
-        beside the one you love when the night feels endless.  
-        Inspired by devotion, resilience, and the fire that burns through fear.
+        A dark alternative rock anthem about strength, vulnerability,
+        and standing beside the one you love when the night feels endless.
+        This is devotion in the middle of chaos.
     </p>
 </section>
 
 <footer>
     © 2026 Your Band Name • All Rights Reserved
 </footer>
+
+<script>
+
+/* 🎧 Fade In Audio After First Interaction */
+
+const audio = document.getElementById("player");
+
+function fadeInAudio() {
+    audio.muted = false;
+    audio.volume = 0;
+    let vol = 0;
+    const fade = setInterval(() => {
+        if (vol < 1) {
+            vol += 0.05;
+            audio.volume = vol;
+        } else {
+            clearInterval(fade);
+        }
+    }, 200);
+    document.removeEventListener("click", fadeInAudio);
+}
+
+document.addEventListener("click", fadeInAudio);
+
+/* ✨ Scroll Fade Animation */
+
+const sections = document.querySelectorAll(".section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            section.classList.add("visible");
+        }
+    });
+});
+
+</script>
 
 </body>
 </html>
