@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set The Sky On Fire</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #0d0d0d;
+    color: white;
+    overflow-x: hidden;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+                url('cover.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-weight: 300;
+    max-width: 600px;
+    margin-bottom: 40px;
+    opacity: 0.85;
+}
+
+.audio-player {
+    margin-top: 20px;
+}
+
+audio {
+    width: 300px;
+}
+
+.section {
+    padding: 80px 20px;
+    text-align: center;
+    background: #111;
+}
+
+.section h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.lyrics-preview {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: #0a0a0a;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <h1>SET THE SKY ON FIRE</h1>
+    <p class="subtitle">
+        She carried the storm alone.  
+        I chose to stand in it with her.  
+        This is a song about holding the warrior when the world burns.
+    </p>
+
+    <div class="audio-player">
+        <audio controls>
+            <source src="song.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</section>
+
+<section class="section">
+    <h2>About The Song</h2>
+    <p class="lyrics-preview">
+        A dark alternative rock anthem about strength, vulnerability, and standing
+        beside the one you love when the night feels endless.  
+        Inspired by devotion, resilience, and the fire that burns through fear.
+    </p>
+</section>
+
+<footer>
+    © 2026 Your Band Name • All Rights Reserved
+</footer>
+
+</body>
+</html>
