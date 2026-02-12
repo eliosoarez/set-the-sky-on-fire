@@ -1,203 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Set The Sky On Fire</title>
+Perfect. If you want SUNO to really understand the direction, the trick is:
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+Describe the mood + texture
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+Describe the vocal tone clearly
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background: #0b0b0b;
-    color: white;
-    overflow-x: hidden;
-}
+Describe the production dynamics
 
-/* 🔥 Animated Fire Glow Background */
-.hero {
-    position: relative;
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
-                url('cover.jpg') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-}
+Avoid saying “make it like Allan Rayman – Word of Mouth” directly (AI tools respond better to stylistic description than direct imitation)
 
-.hero::after {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(255,80,0,0.2), transparent 60%);
-    animation: firePulse 6s infinite ease-in-out;
-    pointer-events: none;
-}
+Here’s a strong optimized prompt you can copy into SUNO:
 
-@keyframes firePulse {
-    0% { transform: scale(1); opacity: 0.3; }
-    50% { transform: scale(1.1); opacity: 0.6; }
-    100% { transform: scale(1); opacity: 0.3; }
-}
+SUNO PROMPT:
 
-/* ⚡ Lightning Flash */
-@keyframes lightning {
-    0% { opacity: 0; }
-    2% { opacity: 0.8; }
-    4% { opacity: 0; }
-    100% { opacity: 0; }
-}
+Dark, sensual alternative rock song with a moody, hypnotic atmosphere. Minimal but gritty production. Deep, intimate male vocal with a low-register, slightly raspy tone — calm but intense, almost whispered in the verses and more powerful in the chorus.
 
-.lightning {
-    position: fixed;
-    inset: 0;
-    background: white;
-    opacity: 0;
-    animation: lightning 8s infinite;
-    pointer-events: none;
-}
+The verses should feel stripped and tense with pulsing bass and subtle guitar textures. The chorus should open up with emotional weight but still stay controlled and cool — not overly pop, not overly polished.
 
-/* Text Styling */
+Groovy, steady drum beat with a slow-burning build. Reverb-heavy guitars, atmospheric background textures, slightly cinematic feel. The vocal delivery should feel confident, mysterious, magnetic, and emotionally restrained — similar to dark indie/alternative rock with sensual undertones.
 
-h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: 4px;
-    margin-bottom: 20px;
-    z-index: 2;
-}
+Tempo around 95–105 BPM. Minor key. Brooding, intimate, and dramatic.
 
-.subtitle {
-    font-weight: 300;
-    max-width: 600px;
-    margin-bottom: 40px;
-    opacity: 0.85;
-    z-index: 2;
-}
-
-/* Audio Player */
-
-audio {
-    width: 300px;
-    z-index: 2;
-}
-
-/* Sections */
-
-.section {
-    padding: 100px 20px;
-    text-align: center;
-    background: #111;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease;
-}
-
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.section h2 {
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.lyrics-preview {
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.8;
-    opacity: 0.8;
-}
-
-footer {
-    padding: 40px 20px;
-    text-align: center;
-    background: #0a0a0a;
-    font-size: 0.9rem;
-    opacity: 0.6;
-}
-</style>
-</head>
-
-<body>
-
-<div class="lightning"></div>
-
-<section class="hero">
-    <h1>SET THE SKY ON FIRE</h1>
-    <p class="subtitle">
-        She carried the storm alone.<br>
-        I chose to stand in it with her.<br>
-        A song about holding the warrior when the world burns.
-    </p>
-
-    <audio id="player" autoplay muted>
-        <source src="song.mp3" type="audio/mpeg">
-    </audio>
-</section>
-
-<section class="section">
-    <h2>About The Song</h2>
-    <p class="lyrics-preview">
-        A dark alternative rock anthem about strength, vulnerability,
-        and standing beside the one you love when the night feels endless.
-        This is devotion in the middle of chaos.
-    </p>
-</section>
-
-<footer>
-    © 2026 Your Band Name • All Rights Reserved
-</footer>
-
-<script>
-
-/* 🎧 Fade In Audio After First Interaction */
-
-const audio = document.getElementById("player");
-
-function fadeInAudio() {
-    audio.muted = false;
-    audio.volume = 0;
-    let vol = 0;
-    const fade = setInterval(() => {
-        if (vol < 1) {
-            vol += 0.05;
-            audio.volume = vol;
-        } else {
-            clearInterval(fade);
-        }
-    }, 200);
-    document.removeEventListener("click", fadeInAudio);
-}
-
-document.addEventListener("click", fadeInAudio);
-
-/* ✨ Scroll Fade Animation */
-
-const sections = document.querySelectorAll(".section");
-
-window.addEventListener("scroll", () => {
-    sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            section.classList.add("visible");
-        }
-    });
-});
-
-</script>
-
-</body>
-</html>
+Make it feel nocturnal, urban, and emotionally charged.
